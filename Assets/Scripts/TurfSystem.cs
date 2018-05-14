@@ -7,41 +7,40 @@ public class TurfSystem : MonoBehaviour
     
     public SpriteRenderer currentTile;
     public Sprite playersSeasonTile;
-	public List<TileStatus> ownedTiles = new List<TileStatus>();
+	public List<GameObject> ownedTiles = new List<GameObject>();
 
-    private void Start()
+    private void Update()
     {
-		InvokeRepeating ("CheckTileOwner", 0, .8f);
+        //CheckTileOwner();
     }
 
-	void CheckTileOwner()
+	public void RemoveTile(GameObject old_Tile)
 	{
-		foreach (TileStatus item in ownedTiles)
-		{
-			if (item.gameObject.GetComponent<TileStatus>().owner != this.gameObject)
-			{
-				ownedTiles.Remove (item);
-			}
-		}
-	}
+       
+                ownedTiles.Remove(old_Tile);
+
+    }
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.CompareTag("PlatformTile"))
         {
             currentTile = coll.gameObject.GetComponent<SpriteRenderer>();
-			foreach (TileStatus item in ownedTiles)
+            if (ownedTiles.Contains(currentTile.gameObject))
             {
-				if (item == currentTile.gameObject.GetComponent<TileStatus>())
-                {
-                    return;
-                }
+                Debug.Log(currentTile.gameObject + " Already owned");
+              
             }
+            else
+            {
 
-            currentTile.sprite = playersSeasonTile;
-			ownedTiles.Add(currentTile.gameObject.GetComponent<TileStatus>());
-			currentTile.gameObject.GetComponent<TileStatus> ().owner = this.gameObject;
+
+                currentTile.sprite = playersSeasonTile;
+                ownedTiles.Add(currentTile.gameObject);
+                currentTile.gameObject.GetComponent<TileStatus>().ChangeOwner(gameObject);
+            }
         }
+
     }
 
 }
