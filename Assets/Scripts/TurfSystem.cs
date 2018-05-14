@@ -28,7 +28,7 @@ public class TurfSystem : MonoBehaviour
             currentTile = coll.gameObject.GetComponent<SpriteRenderer>();
             if (ownedTiles.Contains(currentTile.gameObject))
             {
-                Debug.Log(currentTile.gameObject + " Already owned");
+
               
             }
             else

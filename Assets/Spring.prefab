@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 114860192162723122}
   - component: {fileID: 61491181596118032}
   - component: {fileID: 114761243912845278}
+  - component: {fileID: 114589641817360272}
   m_Layer: 0
   m_Name: Spring
   m_TagString: Player
@@ -74,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1281830467213216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.04371, y: -7.75091, z: 0}
+  m_LocalPosition: {x: -15.617312, y: -5.588212, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1.7482109}
   m_Children:
   - {fileID: 4885874678646924}
@@ -254,6 +255,18 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114589641817360272
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1281830467213216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba96902b4babe14fb96d81ce47d7a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedPlayer: 2
 --- !u!114 &114761243912845278
 MonoBehaviour:
   m_ObjectHideFlags: 1
