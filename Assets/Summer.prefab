@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTile: {fileID: 0}
-  playersSeasonTile: {fileID: 21300000, guid: 36a6c136a0cd19c4789de7ab94e4612c, type: 3}
+  playersSeasonTile: {fileID: 21300000, guid: 2c9f847acb541ef4883e3906ee309674, type: 3}
   ownedTiles: []
 --- !u!114 &114541639781325600
 MonoBehaviour:
