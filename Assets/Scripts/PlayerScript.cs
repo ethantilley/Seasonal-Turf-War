@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class PlayerScript : MonoBehaviour
 {
-    public float rotationspeed = 100.0f;
+   /* public float rotationspeed = 100.0f;
 
     private bool shooting;
     
@@ -187,7 +187,7 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-
+    */
     
 }
 
