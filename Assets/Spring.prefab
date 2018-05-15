@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 114761243912845278}
   - component: {fileID: 114589641817360272}
   - component: {fileID: 114126133180029610}
+  - component: {fileID: 114813999967979384}
   m_Layer: 0
   m_Name: Spring
   m_TagString: Player
@@ -93,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4996610996809274}
   - component: {fileID: 58288899632485118}
-  - component: {fileID: 114082551783998172}
   m_Layer: 0
   m_Name: CeilingCheck
   m_TagString: Head
@@ -322,18 +322,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114082551783998172
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1409025279906488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d4caf9891fd40f4392482921224edad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isShoved: 0
 --- !u!114 &114126133180029610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -447,6 +435,18 @@ MonoBehaviour:
   currentTile: {fileID: 0}
   playersSeasonTile: {fileID: 21300000, guid: 87e6d4af8d24235459e4e9257ce93bdb, type: 3}
   ownedTiles: []
+--- !u!114 &114813999967979384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1281830467213216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4caf9891fd40f4392482921224edad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShoved: 0
 --- !u!114 &114860192162723122
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -86,7 +86,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4740673741475298}
   - component: {fileID: 58548767673531354}
-  - component: {fileID: 114317328714072590}
   m_Layer: 0
   m_Name: CeilingCheck
   m_TagString: Head
@@ -112,6 +111,7 @@ GameObject:
   - component: {fileID: 114376713328733036}
   - component: {fileID: 114753225325100546}
   - component: {fileID: 114447866517005902}
+  - component: {fileID: 114428577164392552}
   m_Layer: 0
   m_Name: Summer
   m_TagString: Player
@@ -343,18 +343,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114317328714072590
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1636574278589832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d4caf9891fd40f4392482921224edad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isShoved: 0
 --- !u!114 &114359090753053064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -386,6 +374,18 @@ MonoBehaviour:
   currentTile: {fileID: 0}
   playersSeasonTile: {fileID: 21300000, guid: 2c9f847acb541ef4883e3906ee309674, type: 3}
   ownedTiles: []
+--- !u!114 &114428577164392552
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843362621290402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4caf9891fd40f4392482921224edad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShoved: 0
 --- !u!114 &114447866517005902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -454,6 +454,8 @@ MonoBehaviour:
   imgCusor: {fileID: 114552116886230056}
   gun: {fileID: 4588497900763332}
   projectilePrefab: {fileID: 1651905254015162, guid: 8dda78bc2fa31224194b22693902df94,
+    type: 2}
+  shovePrefab: {fileID: 1146705812384098, guid: a0467efa588957945b9aa9ea4c98592a,
     type: 2}
   fireRate: 0.5
 --- !u!114 &114873590101262530
