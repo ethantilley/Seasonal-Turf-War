@@ -7,6 +7,11 @@ TagManager:
   - PlatformTile
   - Feet
   - Head
+  - Shove
+  - ShoveAut
+  - ShoveWin
+  - ShoveSum
+  - ShoveSpr
   layers:
   - Default
   - TransparentFX
