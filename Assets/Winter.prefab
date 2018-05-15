@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 61463954809563452}
   - component: {fileID: 114619361922582122}
   - component: {fileID: 114786491928940590}
+  - component: {fileID: 114421197014815126}
   m_Layer: 0
   m_Name: Winter
   m_TagString: Player
@@ -125,7 +126,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4460825171799402}
   - component: {fileID: 58131868272341046}
-  - component: {fileID: 114237299851108022}
   m_Layer: 0
   m_Name: CeilingCheck
   m_TagString: Head
@@ -358,12 +358,12 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114237299851108022
+--- !u!114 &114421197014815126
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1719139568557736}
+  m_GameObject: {fileID: 1700329393460234}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d4caf9891fd40f4392482921224edad, type: 3}
