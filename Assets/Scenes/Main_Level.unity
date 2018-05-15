@@ -155,7 +155,7 @@ Prefab:
     - target: {fileID: 114589641817360272, guid: 793b8e00a9a98434681438f09ab04762,
         type: 2}
       propertyPath: playerSpeed
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 793b8e00a9a98434681438f09ab04762, type: 2}
@@ -5033,7 +5033,7 @@ Prefab:
     - target: {fileID: 114786491928940590, guid: a127f31887458d14b80635d08f1492a5,
         type: 2}
       propertyPath: playerSpeed
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a127f31887458d14b80635d08f1492a5, type: 2}
@@ -6314,7 +6314,7 @@ Prefab:
     - target: {fileID: 114753225325100546, guid: 1ed821d1d65650e47869ecde497a5593,
         type: 2}
       propertyPath: playerSpeed
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ed821d1d65650e47869ecde497a5593, type: 2}

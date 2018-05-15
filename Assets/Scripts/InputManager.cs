@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour {
     public Player selectedPlayer;
     private UnityStandardAssets._2D.PlatformerCharacter2D m_Character;
     public float playerSpeed = 5;
+    float x_Move = 0;
     // Use this for initialization
     void Start () {
         m_Character = GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>();
@@ -22,13 +23,17 @@ public class InputManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        CheckPlayer();
-       
+        CheckControllerMovement();
+
+
+        m_Character.Move(x_Move, false, false);
+        
+        
     }
 
-    void CheckPlayer()
+    void CheckControllerMovement()
     {
-        float x_Move = 0;
+     
         switch (selectedPlayer)
         {
             case Player.Player1:
@@ -46,7 +51,9 @@ public class InputManager : MonoBehaviour {
             default:
                 break;
         }
-        //GetComponent<Rigidbody2D>().velocity = new Vector2(x_Move * playerSpeed * Time.fixedDeltaTime, GetComponent<Rigidbody2D>().velocity.y);
+        
+       
+        print(GetComponent<Rigidbody2D>().velocity + " : " + x_Move);
     }
 
 }
