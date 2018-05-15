@@ -12,6 +12,7 @@ TagManager:
   - ShoveWin
   - ShoveSum
   - ShoveSpr
+  - Projectile
   layers:
   - Default
   - TransparentFX

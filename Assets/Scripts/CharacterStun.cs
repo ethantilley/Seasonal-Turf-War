@@ -14,7 +14,7 @@ public class CharacterStun : MonoBehaviour
             par.velocity = new Vector2(0, 0);
         }
 
-        if (collision.CompareTag("Shove"))
+        if (collision.CompareTag("Shove" ))
         {
             if (isShoved == false)
             {
@@ -27,6 +27,7 @@ public class CharacterStun : MonoBehaviour
                 StartCoroutine(DontShove());
             }
         }
+
     }
 
     public IEnumerator DontShove()

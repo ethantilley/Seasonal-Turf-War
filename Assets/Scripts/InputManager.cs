@@ -172,7 +172,9 @@ public class InputManager : MonoBehaviour
     {
       
        GameObject newProj = Instantiate(projectilePrefab, imgCusor.gameObject.transform.position, gun.rotation);
-        Vector2 direction = gameObject.transform.position - imgCusor.transform.position;
+        var script = newProj.GetComponent<Projectile>();
+        script.turf = gameObject.GetComponent<TurfSystem>();
+       Vector2 direction = gameObject.transform.position - imgCusor.transform.position;
        newProj.GetComponent<Projectile>().Launch(direction);
     }
     void Shove()

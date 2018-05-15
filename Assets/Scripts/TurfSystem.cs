@@ -26,21 +26,23 @@ public class TurfSystem : MonoBehaviour
         if (coll.gameObject.CompareTag("PlatformTile"))
         {
             currentTile = coll.gameObject.GetComponent<SpriteRenderer>();
-            if (ownedTiles.Contains(currentTile.gameObject))
-            {
-
-              
-            }
-            else
-            {
-
-
-                currentTile.sprite = playersSeasonTile;
-                ownedTiles.Add(currentTile.gameObject);
-                currentTile.gameObject.GetComponent<TileStatus>().ChangeOwner(gameObject);
-            }
+            TileChanger();
         }
 
+    }
+
+    public void TileChanger()
+    {
+        
+        if (ownedTiles.Contains(currentTile.gameObject))
+        {
+        }
+        else
+        {
+            currentTile.sprite = playersSeasonTile;
+            ownedTiles.Add(currentTile.gameObject);
+            currentTile.gameObject.GetComponent<TileStatus>().ChangeOwner(gameObject);
+        }
     }
 
 }
