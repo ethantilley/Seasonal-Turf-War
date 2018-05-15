@@ -58,6 +58,7 @@ public class InputManager : MonoBehaviour
         if (rBumper)
         {
             Shove();
+          
             yield return new WaitForSeconds(0.5f);
         }
         yield return new WaitForSeconds(.2f);
@@ -97,6 +98,7 @@ public class InputManager : MonoBehaviour
         m_Character.Move(x_Move, false, jumped);
 
         jumped = false;
+   
     }
 
     void CheckControllerMovement()
@@ -111,8 +113,8 @@ public class InputManager : MonoBehaviour
                 rstickY = Input.GetAxis("Controller1_RStickY");
 
                 rTrigger = Input.GetAxis("Controller1_RightTrigger") > 0f;
-
-                rBumper = Input.GetButtonDown("Controller1_X");
+                if(!rBumper)
+                    rBumper = Input.GetButtonDown("Controller1_X");
 
                 if (!jumped)
                     jumped = Input.GetButtonDown("Controller1_Jump");
@@ -124,8 +126,8 @@ public class InputManager : MonoBehaviour
                 rstickY = Input.GetAxis("Controller2_RStickY");
 
                 rTrigger = Input.GetAxis("Controller2_RightTrigger") > 0f;
-
-                rBumper = Input.GetButtonDown("Controller2_X");
+                if (!rBumper)
+                    rBumper = Input.GetButtonDown("Controller2_X");
 
                 if (!jumped)
                     jumped = Input.GetButtonDown("Controller2_Jump");
@@ -138,7 +140,8 @@ public class InputManager : MonoBehaviour
 
                 rTrigger = Input.GetAxis("Controller3_RightTrigger") > 0f;
 
-                rBumper = Input.GetButtonDown("Controller3_X");
+                if (!rBumper)
+                    rBumper = Input.GetButtonDown("Controller3_X");
 
                 if (!jumped)
                     jumped = Input.GetButtonDown("Controller3_Jump");
@@ -151,7 +154,8 @@ public class InputManager : MonoBehaviour
 
                 rTrigger = Input.GetAxis("Controller4_RightTrigger") > 0f;
 
-                rBumper = Input.GetButtonDown("Controller4_X");
+                if (!rBumper)
+                    rBumper = Input.GetButtonDown("Controller4_X");
 
                 if (!jumped)
                     jumped = Input.GetButtonDown("Controller4_Jump");
@@ -163,6 +167,7 @@ public class InputManager : MonoBehaviour
 
         //print(GetComponent<Rigidbody2D>().velocity + " : " + x_Move);
     }
+
     void FireProjectile()
     {
       
@@ -172,6 +177,9 @@ public class InputManager : MonoBehaviour
     }
     void Shove()
     {
+        Debug.Log("Hmmmmmmmmmmmmmmm?");
+
         Instantiate(shovePrefab, gameObject.transform, false);
+        rBumper = false;
     }
 }
