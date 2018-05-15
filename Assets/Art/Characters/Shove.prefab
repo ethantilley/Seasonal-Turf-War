@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shoveTarget: {fileID: 0}
   shoveSpeed: 5
-  shoveCoolDown: 0.7
+  shoveCoolDown: 0.2
 --- !u!212 &212840592655392290
 SpriteRenderer:
   m_ObjectHideFlags: 1
