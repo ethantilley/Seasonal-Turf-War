@@ -7,6 +7,8 @@ public class Shove : MonoBehaviour
 
     public GameObject shoveTarget;
 
+    public float shoveSpeed, shoveCoolDown;
+
     // Use this for initialization
     void Start()
     {
@@ -37,12 +39,12 @@ public class Shove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.Lerp(transform.position, shoveTarget.transform.position, 2 * Time.deltaTime);         
+        transform.position = Vector2.Lerp(transform.position, shoveTarget.transform.position, shoveSpeed * Time.deltaTime);         
     }
 
     IEnumerator ShoveAction()
     {        
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(shoveCoolDown);
         Destroy(gameObject);
     }
 }

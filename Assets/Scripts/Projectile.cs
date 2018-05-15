@@ -13,8 +13,7 @@ public class Projectile : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        //AudioManager.instance.PlaySound(destroyClip);
-
+       
         if (coll.gameObject.CompareTag("Player"))
         {
             //TakeDamage
@@ -23,7 +22,7 @@ public class Projectile : MonoBehaviour {
             var force = transform.position - coll.transform.position;
             force.Normalize();
             var rb1 = coll.gameObject.GetComponent<Rigidbody2D>();
-            rb1.AddForce(-force * magnitude);
+            rb1.AddForceAtPosition(-force * magnitude, transform.position);
         }
 
         Destroy(gameObject);

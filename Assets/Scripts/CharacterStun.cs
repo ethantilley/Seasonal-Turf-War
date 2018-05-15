@@ -18,15 +18,22 @@ public class CharacterStun : MonoBehaviour
         {
             if (isShoved == false)
             {
-                print("hit");
-                var magnitude = 5000;
-                var force = transform.position - collision.transform.position;
-                force.Normalize();
-                GetComponent<Rigidbody2D>().AddForce(force * magnitude);
+                
+                float magnitude = 10000;
+                Vector3 force = transform.position - collision.transform.position;
+               // force.Normalize();
+
+                GetComponent<Rigidbody2D>().AddForceAtPosition(force.normalized * magnitude, collision.transform.position);
                 isShoved = true;
                 StartCoroutine(DontShove());
             }
         }
+
+        if(collision.CompareTag("DeadZone"))
+        {
+            GameManager.instance.ReSpawnPlayer(gameObject);
+        }
+
 
     }
 

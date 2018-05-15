@@ -13,6 +13,7 @@ TagManager:
   - ShoveSum
   - ShoveSpr
   - Projectile
+  - DeadZone
   layers:
   - Default
   - TransparentFX
