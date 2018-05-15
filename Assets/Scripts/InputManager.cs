@@ -23,6 +23,7 @@ public class InputManager : MonoBehaviour
     float rstickX;
     float rstickY;
     private bool rTrigger;
+    private bool rBumper;
     private float cursorspeed = 5;
     Vector2 direction;
     float ConAngle;
@@ -30,13 +31,15 @@ public class InputManager : MonoBehaviour
     public float angle;
     public Image imgCusor;
     public Transform gun;
-    public GameObject projectilePrefab;
+    public GameObject projectilePrefab,
+        shovePrefab;
     public float fireRate = 0.5f;
 
     // Use this for initialization
     void Start()
     {
         StartCoroutine(GunCoolDown());
+        StartCoroutine(ShoveCoolDown());
         m_Character = GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>();
     }
     IEnumerator GunCoolDown ()
@@ -49,6 +52,16 @@ public class InputManager : MonoBehaviour
         }
         yield return new WaitForSeconds(.2f);
         StartCoroutine(GunCoolDown());
+    }
+    IEnumerator ShoveCoolDown()
+    {
+        if (rBumper)
+        {
+            Shove();
+            yield return new WaitForSeconds(0.5f);
+        }
+        yield return new WaitForSeconds(.2f);
+        StartCoroutine(ShoveCoolDown());
     }
     private void Update()
     {
@@ -99,6 +112,8 @@ public class InputManager : MonoBehaviour
 
                 rTrigger = Input.GetAxis("Controller1_RightTrigger") > 0f;
 
+                rBumper = Input.GetButtonDown("Controller1_X");
+
                 if (!jumped)
                     jumped = Input.GetButtonDown("Controller1_Jump");
                 break;
@@ -109,6 +124,8 @@ public class InputManager : MonoBehaviour
                 rstickY = Input.GetAxis("Controller2_RStickY");
 
                 rTrigger = Input.GetAxis("Controller2_RightTrigger") > 0f;
+
+                rBumper = Input.GetButtonDown("Controller2_X");
 
                 if (!jumped)
                     jumped = Input.GetButtonDown("Controller2_Jump");
@@ -121,6 +138,8 @@ public class InputManager : MonoBehaviour
 
                 rTrigger = Input.GetAxis("Controller3_RightTrigger") > 0f;
 
+                rBumper = Input.GetButtonDown("Controller3_X");
+
                 if (!jumped)
                     jumped = Input.GetButtonDown("Controller3_Jump");
                 break;
@@ -131,6 +150,8 @@ public class InputManager : MonoBehaviour
                 rstickY = Input.GetAxis("Controller4_RStickY");
 
                 rTrigger = Input.GetAxis("Controller4_RightTrigger") > 0f;
+
+                rBumper = Input.GetButtonDown("Controller4_X");
 
                 if (!jumped)
                     jumped = Input.GetButtonDown("Controller4_Jump");
@@ -148,5 +169,9 @@ public class InputManager : MonoBehaviour
        GameObject newProj = Instantiate(projectilePrefab, imgCusor.gameObject.transform.position, gun.rotation);
         Vector2 direction = gameObject.transform.position - imgCusor.transform.position;
        newProj.GetComponent<Projectile>().Launch(direction);
+    }
+    void Shove()
+    {
+        Instantiate(shovePrefab, gameObject.transform, false);
     }
 }

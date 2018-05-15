@@ -59,6 +59,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1482801649827396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4304991641615002}
+  m_Layer: 0
+  m_Name: ShoveTarget
+  m_TagString: ShoveWin
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1654516034448200
 GameObject:
   m_ObjectHideFlags: 1
@@ -138,14 +153,28 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1700329393460234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0109625, y: -6.17782, z: 0}
+  m_LocalPosition: {x: -14.21, y: -6.08, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1.7482109}
   m_Children:
   - {fileID: 4046278866340734}
   - {fileID: 4460825171799402}
   - {fileID: 4778826152723942}
+  - {fileID: 4304991641615002}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4304991641615002
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1482801649827396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4055280803555796}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4460825171799402
 Transform:
@@ -340,6 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4caf9891fd40f4392482921224edad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isShoved: 0
 --- !u!114 &114482653755530808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -383,6 +413,8 @@ MonoBehaviour:
   imgCusor: {fileID: 114823522703879258}
   gun: {fileID: 4778826152723942}
   projectilePrefab: {fileID: 1625166564943578, guid: c028b85465c9e354dac3a55ef52454bc,
+    type: 2}
+  shovePrefab: {fileID: 1146705812384098, guid: a0467efa588957945b9aa9ea4c98592a,
     type: 2}
   fireRate: 0.5
 --- !u!114 &114823522703879258

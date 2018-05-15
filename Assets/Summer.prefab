@@ -46,6 +46,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1265407830247024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4478127463791190}
+  m_Layer: 0
+  m_Name: ShoveTarget
+  m_TagString: ShoveSum
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1419072644687574
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +111,7 @@ GameObject:
   - component: {fileID: 61267827192513190}
   - component: {fileID: 114376713328733036}
   - component: {fileID: 114753225325100546}
+  - component: {fileID: 114447866517005902}
   m_Layer: 0
   m_Name: Summer
   m_TagString: Player
@@ -118,6 +134,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4478127463791190
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265407830247024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4904868907317222}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4588497900763332
 Transform:
   m_ObjectHideFlags: 1
@@ -152,12 +181,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1843362621290402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.3627954, y: -5.4067936, z: 0}
+  m_LocalPosition: {x: 23.12, y: 1.82, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1.7482109}
   m_Children:
   - {fileID: 4985277000638554}
   - {fileID: 4740673741475298}
   - {fileID: 4588497900763332}
+  - {fileID: 4478127463791190}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -324,6 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4caf9891fd40f4392482921224edad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isShoved: 0
 --- !u!114 &114359090753053064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -355,6 +386,18 @@ MonoBehaviour:
   currentTile: {fileID: 0}
   playersSeasonTile: {fileID: 21300000, guid: 2c9f847acb541ef4883e3906ee309674, type: 3}
   ownedTiles: []
+--- !u!114 &114447866517005902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843362621290402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4caf9891fd40f4392482921224edad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShoved: 0
 --- !u!114 &114541639781325600
 MonoBehaviour:
   m_ObjectHideFlags: 1
