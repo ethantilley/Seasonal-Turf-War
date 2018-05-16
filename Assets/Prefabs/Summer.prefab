@@ -181,7 +181,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1843362621290402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.73440695, y: -0.17000017, z: 0}
+  m_LocalPosition: {x: 20.04, y: 1.82, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1.7482109}
   m_Children:
   - {fileID: 4985277000638554}
@@ -222,7 +222,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &58548767673531354
 CircleCollider2D:
@@ -464,7 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba96902b4babe14fb96d81ce47d7a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedPlayer: 1
+  selectedPlayer: 2
   playerSpeed: 20
   offset: 2
   angle: 0

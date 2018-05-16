@@ -10,8 +10,12 @@ public class JoinManager : MonoBehaviour {
     public bool con1Start, con2Start, con3Start, con4Start;
 
     // Use this for initialization
-    void Start () {
-    
+    void Start ()
+    {
+        autumn = GameObject.Find("Autumn");
+        spring = GameObject.Find("Spring");
+        winter = GameObject.Find("Winter");
+        summer = GameObject.Find("Summer");
 
     }
 
