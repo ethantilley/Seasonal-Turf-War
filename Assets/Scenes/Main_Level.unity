@@ -8132,9 +8132,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reSpawnPoint: {fileID: 1083571640}
+  gameComplete: 0
   playerDownTime: 5
   levelTime: 120
   winningPlayer: 
+  currentTimeLeft: 0
   Autumn: {fileID: 0}
   Spring: {fileID: 0}
   Summer: {fileID: 0}
@@ -9282,6 +9284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dacea84892a4a6d488703a2cf1302b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winnerText: {fileID: 951187848}
+  timeLeftText: {fileID: 188892591}
 --- !u!114 &1242392163
 MonoBehaviour:
   m_ObjectHideFlags: 0
