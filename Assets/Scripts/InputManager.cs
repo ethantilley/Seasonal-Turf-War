@@ -42,11 +42,18 @@ public class InputManager : MonoBehaviour
         StartCoroutine(ShoveCoolDown());
         m_Character = GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>();
     }
+    private void OnEnable()
+    {
+        StartCoroutine(GunCoolDown());
+        StartCoroutine(ShoveCoolDown());
+    }
     IEnumerator GunCoolDown ()
     {
         if(rTrigger)
         {
             FireProjectile();
+            Debug.Log("Hmmmmmmmmmmmmmmm?: 1");
+
             yield return new WaitForSeconds(fireRate);
 
         }
@@ -58,7 +65,8 @@ public class InputManager : MonoBehaviour
         if (rBumper)
         {
             Shove();
-          
+            Debug.Log("Hmmmmmmmmmmmmmmm?: 3");
+
             yield return new WaitForSeconds(0.5f);
         }
         yield return new WaitForSeconds(.2f);
@@ -170,8 +178,8 @@ public class InputManager : MonoBehaviour
 
     void FireProjectile()
     {
-      
-       GameObject newProj = Instantiate(projectilePrefab, imgCusor.gameObject.transform.position, gun.rotation);
+        Debug.Log("Hmmmmmmmmmmmmmmm?: 2");
+        GameObject newProj = Instantiate(projectilePrefab, imgCusor.gameObject.transform.position, gun.rotation);
         var script = newProj.GetComponent<Projectile>();
         script.turf = gameObject.GetComponent<TurfSystem>();
        Vector2 direction = gameObject.transform.position - imgCusor.transform.position;
@@ -179,7 +187,7 @@ public class InputManager : MonoBehaviour
     }
     void Shove()
     {
-        Debug.Log("Hmmmmmmmmmmmmmmm?");
+        Debug.Log("Hmmmmmmmmmmmmmmm?: 1");
 
         Instantiate(shovePrefab, gameObject.transform, false);
         rBumper = false;
