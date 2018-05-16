@@ -111,7 +111,6 @@ GameObject:
   - component: {fileID: 114376713328733036}
   - component: {fileID: 114753225325100546}
   - component: {fileID: 114447866517005902}
-  - component: {fileID: 114428577164392552}
   m_Layer: 0
   m_Name: Summer
   m_TagString: Player
@@ -141,7 +140,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1265407830247024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4904868907317222}
@@ -374,18 +373,6 @@ MonoBehaviour:
   currentTile: {fileID: 0}
   playersSeasonTile: {fileID: 21300000, guid: 2c9f847acb541ef4883e3906ee309674, type: 3}
   ownedTiles: []
---- !u!114 &114428577164392552
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1843362621290402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d4caf9891fd40f4392482921224edad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isShoved: 0
 --- !u!114 &114447866517005902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -398,6 +385,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isShoved: 0
+  deathParticlePrefab: {fileID: 1437348924085292, guid: f5d6d7eb92d32c54eae5d5eb511c5575,
+    type: 2}
+  deathPart: {fileID: 0}
 --- !u!114 &114541639781325600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -579,6 +569,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 124.2876, y: 70.30226}
-  m_SizeDelta: {x: 731, y: 411}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}

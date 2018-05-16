@@ -77,7 +77,6 @@ GameObject:
   - component: {fileID: 114814357103899548}
   - component: {fileID: 114448310093158486}
   - component: {fileID: 114848316799758812}
-  - component: {fileID: 114023324144439678}
   m_Layer: 0
   m_Name: Autumn
   m_TagString: Player
@@ -322,18 +321,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114023324144439678
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1603581658520560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d4caf9891fd40f4392482921224edad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isShoved: 0
 --- !u!114 &114076022073278006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -463,6 +450,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isShoved: 0
+  deathParticlePrefab: {fileID: 1223289337943682, guid: 9f2b0126c1c6dda48b3a1a686b233dde,
+    type: 2}
+  deathPart: {fileID: 0}
 --- !u!114 &114907469202219278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -579,6 +569,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 256.4669, y: 353.09872}
-  m_SizeDelta: {x: 731, y: 411}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}

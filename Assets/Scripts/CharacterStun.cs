@@ -5,6 +5,8 @@ using UnityEngine;
 public class CharacterStun : MonoBehaviour
 {
     public bool isShoved;
+    public GameObject deathParticlePrefab,
+        deathPart;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -31,6 +33,15 @@ public class CharacterStun : MonoBehaviour
 
         if(collision.CompareTag("DeadZone"))
         {
+            if (!deathPart)
+            {
+                deathPart = Instantiate(deathParticlePrefab, gameObject.transform.position, deathParticlePrefab.transform.rotation);
+            }
+            else
+            {
+                deathPart = null; 
+            }
+
             GameManager.instance.ReSpawnPlayer(gameObject);
         }
 
