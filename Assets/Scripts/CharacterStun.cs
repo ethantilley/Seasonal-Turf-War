@@ -36,11 +36,8 @@ public class CharacterStun : MonoBehaviour
             if (!deathPart)
             {
                 deathPart = Instantiate(deathParticlePrefab, gameObject.transform.position, deathParticlePrefab.transform.rotation);
-            }
-            else
-            {
-                deathPart = null; 
-            }
+                Destroy(deathPart, 2);
+            }            
 
             GameManager.instance.ReSpawnPlayer(gameObject);
         }
@@ -52,5 +49,5 @@ public class CharacterStun : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         isShoved = false;
-    }
+    }    
 }
