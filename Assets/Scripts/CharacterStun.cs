@@ -7,6 +7,12 @@ public class CharacterStun : MonoBehaviour
     public bool isShoved;
     public GameObject deathParticlePrefab,
         deathPart;
+    Vector3 startPoint;
+
+    private void Start()
+    {
+        startPoint = gameObject.transform.position;    
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,13 +47,27 @@ public class CharacterStun : MonoBehaviour
             {
                 deathPart = null; 
             }
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
-            GameManager.instance.ReSpawnPlayer(gameObject);
+            if (GameManager.instance != null)
+                GameManager.instance.ReSpawnPlayer(gameObject);
+            else
+            {
+                StartCoroutine(BackUpReSpawn());
+                
+            }
+    
         }
 
 
     }
-
+    IEnumerator BackUpReSpawn()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(3);
+        gameObject.transform.position = startPoint;
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+    }
     public IEnumerator DontShove()
     {
         yield return new WaitForSeconds(0.3f);
