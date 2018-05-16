@@ -111,7 +111,7 @@ public class InputManager : MonoBehaviour
 
     void CheckControllerMovement()
     {
-        if (GameManager.instance.gameComplete)
+        if (GameManager.instance != null && GameManager.instance.gameComplete)
             return;
 
         switch (selectedPlayer)
