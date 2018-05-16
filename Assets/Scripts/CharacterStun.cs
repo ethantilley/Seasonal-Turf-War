@@ -42,11 +42,9 @@ public class CharacterStun : MonoBehaviour
             if (!deathPart)
             {
                 deathPart = Instantiate(deathParticlePrefab, gameObject.transform.position, deathParticlePrefab.transform.rotation);
+                Destroy(deathPart, 2);
             }
-            else
-            {
-                deathPart = null; 
-            }
+            
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
             if (GameManager.instance != null)

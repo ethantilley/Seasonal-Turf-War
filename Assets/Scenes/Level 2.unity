@@ -837,9 +837,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reSpawnPoint: {fileID: 58576599}
+  gameComplete: 0
   playerDownTime: 5
   levelTime: 120
   winningPlayer: 
+  currentTimeLeft: 0
   Autumn: {fileID: 0}
   Spring: {fileID: 0}
   Summer: {fileID: 0}
@@ -4132,11 +4134,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4302939523703014, guid: 793b8e00a9a98434681438f09ab04762, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.9
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4302939523703014, guid: 793b8e00a9a98434681438f09ab04762, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.17
+      value: 2.94
       objectReference: {fileID: 0}
     - target: {fileID: 4302939523703014, guid: 793b8e00a9a98434681438f09ab04762, type: 2}
       propertyPath: m_LocalPosition.z
@@ -10808,11 +10810,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4055280803555796, guid: a127f31887458d14b80635d08f1492a5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.53
+      value: -16.26
       objectReference: {fileID: 0}
     - target: {fileID: 4055280803555796, guid: a127f31887458d14b80635d08f1492a5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.2
+      value: -8.29
       objectReference: {fileID: 0}
     - target: {fileID: 4055280803555796, guid: a127f31887458d14b80635d08f1492a5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -22340,11 +22342,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4411207829389896, guid: 727c6cfcadbc8784f89c17aaf465d39f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.7116327
+      value: 17.19
       objectReference: {fileID: 0}
     - target: {fileID: 4411207829389896, guid: 727c6cfcadbc8784f89c17aaf465d39f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.09779749
+      value: -8.23
       objectReference: {fileID: 0}
     - target: {fileID: 4411207829389896, guid: 727c6cfcadbc8784f89c17aaf465d39f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -31665,11 +31667,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4904868907317222, guid: 1ed821d1d65650e47869ecde497a5593, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.73440695
+      value: -16.17
       objectReference: {fileID: 0}
     - target: {fileID: 4904868907317222, guid: 1ed821d1d65650e47869ecde497a5593, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.17000017
+      value: 2.82
       objectReference: {fileID: 0}
     - target: {fileID: 4904868907317222, guid: 1ed821d1d65650e47869ecde497a5593, type: 2}
       propertyPath: m_LocalPosition.z

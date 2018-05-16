@@ -47,7 +47,7 @@ public class InputManager : MonoBehaviour
         StartCoroutine(GunCoolDown());
         StartCoroutine(ShoveCoolDown());
     }
-    IEnumerator GunCoolDown ()
+   IEnumerator GunCoolDown ()
     {
         if(rTrigger)
         {
@@ -58,7 +58,7 @@ public class InputManager : MonoBehaviour
         }
         yield return new WaitForSeconds(.2f);
         StartCoroutine(GunCoolDown());
-    }
+    } 
     IEnumerator ShoveCoolDown()
     {
         if (rBumper)
@@ -111,6 +111,17 @@ public class InputManager : MonoBehaviour
 
     void CheckControllerMovement()
     {
+
+
+
+
+
+
+
+
+
+
+
         if (GameManager.instance != null && GameManager.instance.gameComplete)
             return;
 

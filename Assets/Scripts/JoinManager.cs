@@ -76,7 +76,7 @@ public class JoinManager : MonoBehaviour {
 
         if (con1Start)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Main_Level");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
             DontDestroyOnLoad(gameObject);
             con1Start = false;
 
