@@ -7,13 +7,17 @@ public class GameManager : MonoBehaviour {
 
     public Transform reSpawnPoint;
 
+    public bool gameComplete = false;
+
     public float playerDownTime = 5;
     public float levelTime = 120;
 
+   
     public string winningPlayer;
 
     float currentCoolDown;
-    float currentTimeLeft;
+    [HideInInspector]
+    public float currentTimeLeft;
 
     public TurfSystem Autumn, Spring, Summer, Winter;
     public List<GameObject> deadPlayers = new List<GameObject>();
@@ -32,12 +36,21 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public string LevelTimer()
+    {
+        string minutes = Mathf.Floor(currentTimeLeft / 60).ToString();
+
+        string seconds = (currentTimeLeft % 60).ToString("00");
+
+        return string.Format("{0}:{1}", minutes, seconds);
+    }
+
     private void Start()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
         currentTimeLeft = levelTime;
     }
-    string CalculateWinningPlayer()
+    public string CalculateWinningPlayer()
     {
         GameObject test = players[0];
         foreach (var item in players)
@@ -81,6 +94,10 @@ public class GameManager : MonoBehaviour {
 
     private void LevelFinished()
     {
+        if (gameComplete)
+            return;
+
+       gameComplete = true;
        print(CalculateWinningPlayer());
     }
 

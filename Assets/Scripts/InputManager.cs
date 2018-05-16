@@ -110,6 +110,8 @@ public class InputManager : MonoBehaviour
 
     void CheckControllerMovement()
     {
+        if (GameManager.instance.gameComplete)
+            return;
 
         switch (selectedPlayer)
         {
