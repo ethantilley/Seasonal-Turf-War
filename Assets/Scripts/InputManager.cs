@@ -38,8 +38,7 @@ public class InputManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        StartCoroutine(GunCoolDown());
-        StartCoroutine(ShoveCoolDown());
+       
         m_Character = GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>();
     }
     private void OnEnable()
