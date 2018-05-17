@@ -97,11 +97,13 @@ public class GameManager : MonoBehaviour {
         if (gameComplete)
             return;
 
-       gameComplete = true;
-       print(CalculateWinningPlayer());
+        gameComplete = true;
+
+        JoinManager.instance.startButtonActive = true;
     }
 
-    public void ReSpawnPlayer(GameObject player)
+
+public void ReSpawnPlayer(GameObject player)
     {
         player.SetActive(false);
         currentCoolDown = playerDownTime;

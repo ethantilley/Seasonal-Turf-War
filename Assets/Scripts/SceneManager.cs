@@ -19,24 +19,46 @@ public class SceneManager : MonoBehaviour {
             instance = this;
         }
     }
+    private void OnLevelWasLoaded(int level)
+    {
+        string name = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
 
+        if (avalibleLevels.Contains(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name))
+        {
+
+            foreach (var item in avalibleLevels.ToArray())
+            {
+                if (item == name)
+                {
+                    usedLevels.Add(item);
+                    avalibleLevels.Remove(item);
+                   
+                }
+            }            
+           
+           
+        }
+
+    }
     public List<string> avalibleLevels = new List<string>();
-    private List<string> usedLevels = new List<string>();
+    public List<string> usedLevels = new List<string>();
     public string GetRandomShuffledScene ()
     {
         if (avalibleLevels.Count == 0)
         {
-            avalibleLevels = usedLevels;
+            foreach (var item in usedLevels)
+            {
+                avalibleLevels.Add(item);
+            }
             usedLevels.Clear();
         }
 
         int randScene = Random.Range(0, avalibleLevels.Count);
 
-        avalibleLevels.Remove(avalibleLevels[randScene]);
-        usedLevels.Add(avalibleLevels[randScene]);
-
+       
 
         return avalibleLevels[randScene];
+
     }
 
     public void LoadLevel (string sceneName)

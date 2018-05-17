@@ -106,7 +106,7 @@ public class JoinManager : MonoBehaviour {
             playersJoining.Add(winter.name);  }
        
 
-        if (con1Start && startButtonActive)
+        if (con1Start)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(SceneManager.instance.GetRandomShuffledScene());
             startButtonActive = false;
@@ -134,9 +134,12 @@ public class JoinManager : MonoBehaviour {
 
 
 
-        if (Input.GetButtonDown("Controller1_Start") && autumn.activeInHierarchy)
-            con1Start = true;
+        if (Input.GetButtonDown("Controller1_Start") && startButtonActive)
+        {
+            startButtonActive = false;
 
+            con1Start = true;
+        }
        
     }
 }
