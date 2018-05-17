@@ -15,8 +15,7 @@ public class Projectile : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.CompareTag("Player"))
-        {
-            print("yeet");
+        {            
             if (coll.gameObject.name == playerName)
             {
                 print(playerName);

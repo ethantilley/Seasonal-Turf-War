@@ -33,8 +33,7 @@ public class InputManager : MonoBehaviour
     public float angle;
     public Image imgCusor;
     public Transform gun;
-    public GameObject projectilePrefab,
-        shovePrefab;
+    public GameObject projectilePrefab;
     public float fireRate = 0.5f,
         shoveRate = 0.5f;
     public Animator anim;
@@ -44,8 +43,8 @@ public class InputManager : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         m_Character = GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>();
-    }   
-   
+    }
+
     private void Update()
     {
         CheckControllerMovement();
@@ -112,15 +111,14 @@ public class InputManager : MonoBehaviour
         direction = new Vector2(rstickX, rstickY);
         // Moving the cursor position 
         ConAngle = Mathf.Atan2(rstickY, rstickX) * Mathf.Rad2Deg;
-        // Set the guns rotation the forward angle position 
-        //uiScript.imgCusor.transform.Translate(0, rsticky, 0);
+        // Set the guns rotation the forward angle position        
         imgCusor.transform.position = gun.position + (Vector3)direction.normalized * offset;
         gun.rotation = Quaternion.AngleAxis(ConAngle, Vector3.forward);
 
         m_Character.Move(x_Move, false, jumped);
 
         jumped = false;
-   
+
     }
 
     void CheckControllerMovement()
@@ -137,9 +135,8 @@ public class InputManager : MonoBehaviour
                 rstickY = Input.GetAxis("Controller1_RStickY");
 
                 rTrigger = Input.GetAxis("Controller1_RightTrigger") < 0f;
-               // print(Input.GetAxis("Controller1_RightTrigger") + " : " + rTrigger);
 
-                if(!rBumper)
+                if (!rBumper)
                     rBumper = Input.GetButtonDown("Controller1_X");
 
                 if (!jumped)
@@ -189,9 +186,6 @@ public class InputManager : MonoBehaviour
             default:
                 break;
         }
-
-
-        //print(GetComponent<Rigidbody2D>().velocity + " : " + x_Move);
     }
 
     void FireProjectile()
@@ -202,9 +196,10 @@ public class InputManager : MonoBehaviour
         GameObject newProj = Instantiate(projectilePrefab, imgCusor.gameObject.transform.position, gun.rotation);
         Debug.Log(imgCusor.gameObject);
         Debug.Log(projectilePrefab);
-        var script = newProj.GetComponent<Projectile>();
+        var script = newProj.GetComponent<Projectile>();        
         script.turf = gameObject.GetComponent<TurfSystem>();
-       Vector2 direction = gameObject.transform.position - imgCusor.transform.position;
-       newProj.GetComponent<Projectile>().Launch(direction);
-    }    
+        script.playerName = gameObject.name;
+        Vector2 direction = gameObject.transform.position - imgCusor.transform.position;
+        newProj.GetComponent<Projectile>().Launch(direction);
+    }
 }
