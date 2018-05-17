@@ -828,7 +828,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press B To Join
+  m_Text: 'Press B To Join
+
+    Press Start To Play'
 --- !u!222 &188892592
 CanvasRenderer:
   m_ObjectHideFlags: 0
