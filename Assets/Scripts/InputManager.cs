@@ -44,9 +44,8 @@ public class InputManager : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         m_Character = GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>();
-        offset = 1.5f;
-    }
-
+    }   
+   
     private void Update()
     {
         CheckControllerMovement();
@@ -121,7 +120,7 @@ public class InputManager : MonoBehaviour
         m_Character.Move(x_Move, false, jumped);
 
         jumped = false;
-
+   
     }
 
     void CheckControllerMovement()
@@ -137,8 +136,10 @@ public class InputManager : MonoBehaviour
                 rstickX = Input.GetAxis("Controller1_RStickX");
                 rstickY = Input.GetAxis("Controller1_RStickY");
 
-                rTrigger = Input.GetAxis("Controller1_RightTrigger") > 0f;
-                if (!rBumper)
+                rTrigger = Input.GetAxis("Controller1_RightTrigger") < 0f;
+               // print(Input.GetAxis("Controller1_RightTrigger") + " : " + rTrigger);
+
+                if(!rBumper)
                     rBumper = Input.GetButtonDown("Controller1_X");
 
                 if (!jumped)
@@ -150,7 +151,7 @@ public class InputManager : MonoBehaviour
                 rstickX = Input.GetAxis("Controller2_RStickX");
                 rstickY = Input.GetAxis("Controller2_RStickY");
 
-                rTrigger = Input.GetAxis("Controller2_RightTrigger") > 0f;
+                rTrigger = Input.GetAxis("Controller2_RightTrigger") < 0f;
                 if (!rBumper)
                     rBumper = Input.GetButtonDown("Controller2_X");
 
@@ -163,7 +164,7 @@ public class InputManager : MonoBehaviour
                 rstickX = Input.GetAxis("Controller3_RStickX");
                 rstickY = Input.GetAxis("Controller3_RStickY");
 
-                rTrigger = Input.GetAxis("Controller3_RightTrigger") > 0f;
+                rTrigger = Input.GetAxis("Controller3_RightTrigger") < 0f;
 
                 if (!rBumper)
                     rBumper = Input.GetButtonDown("Controller3_X");
@@ -177,7 +178,7 @@ public class InputManager : MonoBehaviour
                 rstickX = Input.GetAxis("Controller4_RStickX");
                 rstickY = Input.GetAxis("Controller4_RStickY");
 
-                rTrigger = Input.GetAxis("Controller4_RightTrigger") > 0f;
+                rTrigger = Input.GetAxis("Controller4_RightTrigger") < 0f;
 
                 if (!rBumper)
                     rBumper = Input.GetButtonDown("Controller4_X");
@@ -203,8 +204,7 @@ public class InputManager : MonoBehaviour
         Debug.Log(projectilePrefab);
         var script = newProj.GetComponent<Projectile>();
         script.turf = gameObject.GetComponent<TurfSystem>();
-        script.playerName = gameObject.name;
-        Vector2 direction = gameObject.transform.position - imgCusor.transform.position;
-        newProj.GetComponent<Projectile>().Launch(direction);
-    }
+       Vector2 direction = gameObject.transform.position - imgCusor.transform.position;
+       newProj.GetComponent<Projectile>().Launch(direction);
+    }    
 }
