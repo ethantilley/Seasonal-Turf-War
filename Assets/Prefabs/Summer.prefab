@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 114376713328733036}
   - component: {fileID: 114753225325100546}
   - component: {fileID: 114447866517005902}
+  - component: {fileID: 114234928255154892}
   m_Layer: 0
   m_Name: Summer
   m_TagString: Player
@@ -368,6 +369,25 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114234928255154892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843362621290402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8a3ade1d2955d46a1f1dd0c84453f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  properties:
+    angle: 0
+    strength: 0.3
+    speed: 6
+    duration: 0.4
+    noisePercent: 1
+    dampingPercent: 0
+    rotationPercent: 0
 --- !u!114 &114359090753053064
 MonoBehaviour:
   m_ObjectHideFlags: 1

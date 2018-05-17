@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 58066519405070560}
   - component: {fileID: 50830367380128972}
   - component: {fileID: 58904428060976696}
+  - component: {fileID: 114170308312771268}
   m_Layer: 0
   m_Name: Winter_Projectile
   m_TagString: Projectile
@@ -154,6 +155,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &114170308312771268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1625166564943578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8a3ade1d2955d46a1f1dd0c84453f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  properties:
+    angle: 0
+    strength: 0.3
+    speed: 6
+    duration: 0.4
+    noisePercent: 1
+    dampingPercent: 0
+    rotationPercent: 0
 --- !u!114 &114733419611300444
 MonoBehaviour:
   m_ObjectHideFlags: 1

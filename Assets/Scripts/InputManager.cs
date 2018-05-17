@@ -83,7 +83,6 @@ public class InputManager : MonoBehaviour
             rBumper = false;
             if (shove == true)
             {
-                print("pressedandowrk");
                 shove = false;
                 anim.SetTrigger("Shove");
             }
@@ -94,8 +93,9 @@ public class InputManager : MonoBehaviour
             rTrigger = false;
             if (shoot == true)
             {
-                print("pressedandowrk");
+
                 FireProjectile();
+                shoot = false;
             }
         }
 
@@ -191,13 +191,13 @@ public class InputManager : MonoBehaviour
     void FireProjectile()
     {
         if (rstickX != 0 && rstickY != 0)
-        {            
-            Debug.Log(this.gameObject.name + "fireproj");
-            shoot = false;
+        {
+            
+         
             anim.SetTrigger("Throw");
             GameObject newProj = Instantiate(projectilePrefab, imgCusor.gameObject.transform.position, gun.rotation);
-            Debug.Log(imgCusor.gameObject);
-            Debug.Log(projectilePrefab);
+            CameraController.instance.StartShake(GetComponent<ScreenShake>().properties);
+
             var script = newProj.GetComponent<Projectile>();
             script.turf = gameObject.GetComponent<TurfSystem>();
             script.playerName = gameObject.name;

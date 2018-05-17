@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 58173811124318628}
   - component: {fileID: 50898484773412026}
   - component: {fileID: 58373755430184592}
+  - component: {fileID: 114914916266036578}
   m_Layer: 0
   m_Name: Summer_Projectile
   m_TagString: Projectile
@@ -169,6 +170,25 @@ MonoBehaviour:
   lifeTime: 20
   turf: {fileID: 0}
   playerName: 
+--- !u!114 &114914916266036578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1651905254015162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8a3ade1d2955d46a1f1dd0c84453f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  properties:
+    angle: 0
+    strength: 0.3
+    speed: 6
+    duration: 0.4
+    noisePercent: 1
+    dampingPercent: 0
+    rotationPercent: 0
 --- !u!198 &198755171794594246
 ParticleSystem:
   m_ObjectHideFlags: 1

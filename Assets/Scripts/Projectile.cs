@@ -22,6 +22,8 @@ public class Projectile : MonoBehaviour {
             }
             else
             {
+                CameraController.instance.StartShake(GetComponent<ScreenShake>().properties);
+
                 var magnitude = 5000;
                 var force = transform.position - coll.transform.position;
                 force.Normalize();

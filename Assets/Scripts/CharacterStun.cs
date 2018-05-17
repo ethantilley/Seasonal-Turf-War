@@ -27,14 +27,17 @@ public class CharacterStun : MonoBehaviour
     {
         if (collision.CompareTag("Feet"))
         {
+           
             var par = gameObject.GetComponentInParent<Rigidbody2D>();
             par.velocity = new Vector2(0, 0);
         }
 
         if (collision.CompareTag("Shove"))
         {
-            if (isShoved == false)
-            {                
+             if (isShoved == false)
+            {
+                CameraController.instance.StartShake(GetComponent<ScreenShake>().properties);
+
                 float magnitude = 10000;
                 Vector3 force = transform.position - collision.transform.position;
                 // force.Normalize();

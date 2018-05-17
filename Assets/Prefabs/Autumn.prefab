@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 114814357103899548}
   - component: {fileID: 114448310093158486}
   - component: {fileID: 114848316799758812}
+  - component: {fileID: 114266519351615700}
   m_Layer: 0
   m_Name: Autumn
   m_TagString: Player
@@ -381,6 +382,25 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114266519351615700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1603581658520560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8a3ade1d2955d46a1f1dd0c84453f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  properties:
+    angle: 0
+    strength: 0.3
+    speed: 6
+    duration: 0.4
+    noisePercent: 1
+    dampingPercent: 0
+    rotationPercent: 0
 --- !u!114 &114448310093158486
 MonoBehaviour:
   m_ObjectHideFlags: 1

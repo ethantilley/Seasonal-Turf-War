@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 114761243912845278}
   - component: {fileID: 114589641817360272}
   - component: {fileID: 114126133180029610}
+  - component: {fileID: 114012569631524600}
   m_Layer: 0
   m_Name: Spring
   m_TagString: Player
@@ -347,6 +348,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114012569631524600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1281830467213216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8a3ade1d2955d46a1f1dd0c84453f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  properties:
+    angle: 0
+    strength: 0.3
+    speed: 6
+    duration: 0.4
+    noisePercent: 1
+    dampingPercent: 0
+    rotationPercent: 0
 --- !u!114 &114126133180029610
 MonoBehaviour:
   m_ObjectHideFlags: 1

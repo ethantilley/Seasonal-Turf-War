@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 114619361922582122}
   - component: {fileID: 114786491928940590}
   - component: {fileID: 114421197014815126}
+  - component: {fileID: 114810096823922704}
   m_Layer: 0
   m_Name: Winter
   m_TagString: Player
@@ -446,6 +447,25 @@ MonoBehaviour:
   fireRate: 0.5
   shoveRate: 0.5
   anim: {fileID: 0}
+--- !u!114 &114810096823922704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1700329393460234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8a3ade1d2955d46a1f1dd0c84453f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  properties:
+    angle: 0
+    strength: 0.3
+    speed: 6
+    duration: 0.4
+    noisePercent: 1
+    dampingPercent: 0
+    rotationPercent: 0
 --- !u!114 &114823522703879258
 MonoBehaviour:
   m_ObjectHideFlags: 1
