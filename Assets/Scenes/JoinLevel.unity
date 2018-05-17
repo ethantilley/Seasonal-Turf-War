@@ -1453,6 +1453,7 @@ MonoBehaviour:
   - Level 1
   - Level 2
   - Level 3
+  usedLevels: []
 --- !u!1 &433841634
 GameObject:
   m_ObjectHideFlags: 0
