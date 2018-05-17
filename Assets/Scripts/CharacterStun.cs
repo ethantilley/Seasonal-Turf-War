@@ -8,18 +8,23 @@ public class CharacterStun : MonoBehaviour
     public GameObject deathParticlePrefab,
         deathPart;
     Vector3 startPoint;
-
+    [EnumAttribute()]
+    public string deathSound;
 
     private void OnEnable()
     {
+        if(CameraScript.instance != null)
         CameraScript.instance.Add(gameObject.transform);
     }
     private void OnDisable()
     {
-        CameraScript.instance.Remove(gameObject.transform);
+        if (CameraScript.instance != null)
+            CameraScript.instance.Remove(gameObject.transform);
     }
     private void Start()
     {
+        if (CameraScript.instance != null)
+            CameraScript.instance.Add(gameObject.transform);
         startPoint = gameObject.transform.position;    
     }
 
@@ -55,7 +60,7 @@ public class CharacterStun : MonoBehaviour
                 deathPart = Instantiate(deathParticlePrefab, gameObject.transform.position, deathParticlePrefab.transform.rotation);
                 Destroy(deathPart, 2);
             }
-            
+            AudioManager.instance.PlaySound(deathSound);
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
             if (GameManager.instance != null)

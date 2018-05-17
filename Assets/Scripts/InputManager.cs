@@ -19,7 +19,11 @@ public class InputManager : MonoBehaviour
     public float playerSpeed = 5;
     float x_Move = 0;
     bool jumped;
-
+    [EnumAttribute()]
+    public string throwSound;
+ 
+    [EnumAttribute()]
+    public string meleeSound;
     float rstickX;
     float rstickY;
     private bool rTrigger,
@@ -84,6 +88,7 @@ public class InputManager : MonoBehaviour
             if (shove == true)
             {
                 shove = false;
+                AudioManager.instance.PlaySound(meleeSound);
                 anim.SetTrigger("Shove");
             }
         }
@@ -192,8 +197,8 @@ public class InputManager : MonoBehaviour
     {
         if (rstickX != 0 && rstickY != 0)
         {
-            
-         
+
+            AudioManager.instance.PlaySound(throwSound);
             anim.SetTrigger("Throw");
             GameObject newProj = Instantiate(projectilePrefab, imgCusor.gameObject.transform.position, gun.rotation);
             CameraController.instance.StartShake(GetComponent<ScreenShake>().properties);

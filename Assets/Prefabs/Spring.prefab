@@ -382,6 +382,7 @@ MonoBehaviour:
   deathParticlePrefab: {fileID: 1116529052636210, guid: 7a36f83390913ba4085bb0c0bb3c8003,
     type: 2}
   deathPart: {fileID: 0}
+  deathSound: playerDeath
 --- !u!114 &114380318156685242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -461,6 +462,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedPlayer: 1
   playerSpeed: 20
+  throwSound: playerThrow
+  meleeSound: playerMelee
   offset: 1.2
   angle: 0
   imgCusor: {fileID: 114380318156685242}
