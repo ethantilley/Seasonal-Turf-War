@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
     public float playerDownTime = 5;
     public float levelTime = 120;
 
+    public bool gamePaused = false;
    
     public string winningPlayer;
 
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour {
     public TurfSystem Autumn, Spring, Summer, Winter;
     public List<GameObject> deadPlayers = new List<GameObject>();
     public GameObject[] players;
-
+    public float currDownTime1, currDownTime2, currDownTime3, currDownTime4;
     public static GameManager instance;
     private void Awake()
     {
@@ -67,28 +68,82 @@ public class GameManager : MonoBehaviour {
     {
         if (currentTimeLeft > 0)
         {
-            currentTimeLeft -= Time.deltaTime;
+
+            if (!gamePaused)
+                currentTimeLeft -= Time.deltaTime;
         }
         else
         {
             LevelFinished();
         }
-       
-        if (currentCoolDown > 0)
+
+        //--------
+
+
+        if (currDownTime1 > 0)
         {
-            currentCoolDown -= Time.deltaTime;
+            currDownTime1 -= Time.deltaTime;
         }
         else
         {
-            currentCoolDown = 0;
+            currDownTime1 = 0;
+
             if (deadPlayers.Count == 0)
                 return;
 
-            foreach (var item in deadPlayers.ToArray())
-            {
-                item.SetActive(true);
-                deadPlayers.Remove(item.gameObject);
-            }
+            deadPlayers[0].SetActive(true);
+         
+            deadPlayers.Remove(deadPlayers[0]);
+            
+        }
+
+        if (currDownTime2 > 0)
+        {
+            currDownTime2 -= Time.deltaTime;
+        }
+        else
+        {
+            currDownTime2 = 0;
+
+            if (deadPlayers.Count < 2)
+                return;
+
+            deadPlayers[1].SetActive(true);
+            deadPlayers.Remove(deadPlayers[1]);
+
+        }
+
+        if (currDownTime3 > 0)
+        {
+            currDownTime3 -= Time.deltaTime;
+        }
+        else
+        {
+            currDownTime3 = 0;
+
+            if (deadPlayers.Count < 3)
+                return;
+
+            deadPlayers[2].SetActive(true);
+            deadPlayers.Remove(deadPlayers[2]);
+
+        }
+
+        if (currDownTime4 > 0)
+        {
+            currDownTime4 -= Time.deltaTime;
+        }
+        else
+        {
+            currDownTime4 = 0;
+
+            if (deadPlayers.Count < 4)
+                return;
+
+            deadPlayers[3].SetActive(true);
+         
+            deadPlayers.Remove(deadPlayers[3]);
+
         }
     }
 
@@ -103,14 +158,36 @@ public class GameManager : MonoBehaviour {
     }
 
 
-public void ReSpawnPlayer(GameObject player)
+    public void ReSpawnPlayer(GameObject player)
     {
+        
+        CameraController.instance.StartShake(GetComponent<ScreenShake>().properties);
         player.SetActive(false);
+        //player.GetComponent<CharacterStun>().currentCoolDown = playerDownTime;
         currentCoolDown = playerDownTime;
         if(!deadPlayers.Contains(player))
-        deadPlayers.Add(player);
+            deadPlayers.Add(player);
+
+
+        switch (deadPlayers.Count)
+        {
+            case 1:
+                currDownTime1 = playerDownTime;
+                break;
+            case 2:
+                currDownTime2 = playerDownTime;
+                break;
+            case 3:
+                currDownTime3 = playerDownTime;
+                break;
+            case 4:
+                currDownTime4 = playerDownTime;
+                break;
+            default:
+                break;
+        }
         player.transform.position = reSpawnPoint.position;
-       
+        
     }
 
 }

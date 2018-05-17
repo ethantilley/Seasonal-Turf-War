@@ -190,12 +190,8 @@ public class InputManager : MonoBehaviour
 
     void FireProjectile()
     {
-        if (rstickX == 0 && rstickY == 0)
-        {
-
-        }
-        else
-        {
+        if (rstickX != 0 && rstickY != 0)
+        {            
             Debug.Log(this.gameObject.name + "fireproj");
             shoot = false;
             anim.SetTrigger("Throw");

@@ -9,6 +9,15 @@ public class CharacterStun : MonoBehaviour
         deathPart;
     Vector3 startPoint;
 
+
+    private void OnEnable()
+    {
+        CameraScript.instance.Add(gameObject.transform);
+    }
+    private void OnDisable()
+    {
+        CameraScript.instance.Remove(gameObject.transform);
+    }
     private void Start()
     {
         startPoint = gameObject.transform.position;    
