@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour {
         else
         {
             currentCoolDown = 0;
-            if (deadPlayers.Count < 0)
+            if (deadPlayers.Count == 0)
                 return;
 
             foreach (var item in deadPlayers.ToArray())

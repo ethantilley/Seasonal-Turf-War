@@ -51,6 +51,8 @@ public class InputManager : MonoBehaviour
     {
         if(rTrigger)
         {
+            
+            Debug.Log(this.gameObject.name + "GunCoolDown");
             FireProjectile();
             anim.SetTrigger("Throw");
 
@@ -191,8 +193,11 @@ public class InputManager : MonoBehaviour
 
     void FireProjectile()
     {
-        Debug.Log("Hmmmmmmmmmmmmmmm?: 2");
+        Debug.Log(this.gameObject.name + "fireproj");
+
         GameObject newProj = Instantiate(projectilePrefab, imgCusor.gameObject.transform.position, gun.rotation);
+        Debug.Log(imgCusor.gameObject);
+        Debug.Log(projectilePrefab);
         var script = newProj.GetComponent<Projectile>();
         script.turf = gameObject.GetComponent<TurfSystem>();
        Vector2 direction = gameObject.transform.position - imgCusor.transform.position;
