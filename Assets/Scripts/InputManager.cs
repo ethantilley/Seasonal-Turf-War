@@ -190,16 +190,23 @@ public class InputManager : MonoBehaviour
 
     void FireProjectile()
     {
-        Debug.Log(this.gameObject.name + "fireproj");
-        shoot = false;
-        anim.SetTrigger("Throw");
-        GameObject newProj = Instantiate(projectilePrefab, imgCusor.gameObject.transform.position, gun.rotation);
-        Debug.Log(imgCusor.gameObject);
-        Debug.Log(projectilePrefab);
-        var script = newProj.GetComponent<Projectile>();        
-        script.turf = gameObject.GetComponent<TurfSystem>();
-        script.playerName = gameObject.name;
-        Vector2 direction = gameObject.transform.position - imgCusor.transform.position;
-        newProj.GetComponent<Projectile>().Launch(direction);
+        if (rstickX == 0 && rstickY == 0)
+        {
+
+        }
+        else
+        {
+            Debug.Log(this.gameObject.name + "fireproj");
+            shoot = false;
+            anim.SetTrigger("Throw");
+            GameObject newProj = Instantiate(projectilePrefab, imgCusor.gameObject.transform.position, gun.rotation);
+            Debug.Log(imgCusor.gameObject);
+            Debug.Log(projectilePrefab);
+            var script = newProj.GetComponent<Projectile>();
+            script.turf = gameObject.GetComponent<TurfSystem>();
+            script.playerName = gameObject.name;
+            Vector2 direction = gameObject.transform.position - imgCusor.transform.position;
+            newProj.GetComponent<Projectile>().Launch(direction);
+        }
     }
 }

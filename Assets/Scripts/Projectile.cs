@@ -29,7 +29,6 @@ public class Projectile : MonoBehaviour {
                 rb1.AddForceAtPosition(-force * magnitude, transform.position);
             }
         }
-
         Destroy(gameObject);
     }
 
@@ -49,8 +48,6 @@ public class Projectile : MonoBehaviour {
 
         rb.velocity = Vector3.zero;
     
-        rb.AddForce(-direction.normalized * speed);
-
-        //transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        rb.AddForce(-direction.normalized * speed);       
     }
 }
