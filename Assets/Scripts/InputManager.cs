@@ -135,7 +135,9 @@ public class InputManager : MonoBehaviour
                 rstickX = Input.GetAxis("Controller1_RStickX");
                 rstickY = Input.GetAxis("Controller1_RStickY");
 
-                rTrigger = Input.GetAxis("Controller1_RightTrigger") > 0f;
+                rTrigger = Input.GetAxis("Controller1_RightTrigger") < 0f;
+               // print(Input.GetAxis("Controller1_RightTrigger") + " : " + rTrigger);
+
                 if(!rBumper)
                     rBumper = Input.GetButtonDown("Controller1_X");
 
@@ -148,7 +150,7 @@ public class InputManager : MonoBehaviour
                 rstickX = Input.GetAxis("Controller2_RStickX");
                 rstickY = Input.GetAxis("Controller2_RStickY");
 
-                rTrigger = Input.GetAxis("Controller2_RightTrigger") > 0f;
+                rTrigger = Input.GetAxis("Controller2_RightTrigger") < 0f;
                 if (!rBumper)
                     rBumper = Input.GetButtonDown("Controller2_X");
 
@@ -161,7 +163,7 @@ public class InputManager : MonoBehaviour
                 rstickX = Input.GetAxis("Controller3_RStickX");
                 rstickY = Input.GetAxis("Controller3_RStickY");
 
-                rTrigger = Input.GetAxis("Controller3_RightTrigger") > 0f;
+                rTrigger = Input.GetAxis("Controller3_RightTrigger") < 0f;
 
                 if (!rBumper)
                     rBumper = Input.GetButtonDown("Controller3_X");
@@ -175,7 +177,7 @@ public class InputManager : MonoBehaviour
                 rstickX = Input.GetAxis("Controller4_RStickX");
                 rstickY = Input.GetAxis("Controller4_RStickY");
 
-                rTrigger = Input.GetAxis("Controller4_RightTrigger") > 0f;
+                rTrigger = Input.GetAxis("Controller4_RightTrigger") < 0f;
 
                 if (!rBumper)
                     rBumper = Input.GetButtonDown("Controller4_X");
