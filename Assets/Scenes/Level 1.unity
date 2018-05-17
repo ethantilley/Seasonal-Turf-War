@@ -3430,7 +3430,7 @@ MonoBehaviour:
   reSpawnPoint: {fileID: 1083571640}
   gameComplete: 0
   playerDownTime: 3
-  levelTime: 10
+  levelTime: 45
   winningPlayer: 
   currentTimeLeft: 0
   Autumn: {fileID: 0}
