@@ -5,9 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class JoinManager : MonoBehaviour {
 
+
+    public static JoinManager instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            DestroyImmediate(this);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
+
+
+
+
+
+
     public GameObject autumn, spring, winter, summer;
     public bool con1B, con2B, con3B, con4B;
     public bool con1Start, con2Start, con3Start, con4Start;
+
+
+    public bool startButtonActive = true;
+
     public List<string> playersJoining = new List<string>();
     public GameObject[] playerActive;
     // Use this for initialization
@@ -81,16 +106,18 @@ public class JoinManager : MonoBehaviour {
             playersJoining.Add(winter.name);  }
        
 
-        if (con1Start)
+        if (con1Start && startButtonActive)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
+            UnityEngine.SceneManagement.SceneManager.LoadScene(SceneManager.instance.GetRandomShuffledScene());
+            startButtonActive = false;
+
             DontDestroyOnLoad(gameObject);
             con1Start = false;
 
         }
 
     }
-
+    
     void CheckJoining()
     {
         con1B = Input.GetButtonDown("Controller1_B");
