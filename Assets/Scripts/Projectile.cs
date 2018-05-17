@@ -9,20 +9,26 @@ public class Projectile : MonoBehaviour {
     //public string destroyClip;
 
     public float lifeTime = 20;
-    public TurfSystem turf;    
+    public TurfSystem turf;
+    public string playerName;
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-       
         if (coll.gameObject.CompareTag("Player"))
         {
-            //TakeDamage
             print("yeet");
-            var magnitude = 5000;
-            var force = transform.position - coll.transform.position;
-            force.Normalize();
-            var rb1 = coll.gameObject.GetComponent<Rigidbody2D>();
-            rb1.AddForceAtPosition(-force * magnitude, transform.position);
+            if (coll.gameObject.name == playerName)
+            {
+                print(playerName);
+            }
+            else
+            {
+                var magnitude = 5000;
+                var force = transform.position - coll.transform.position;
+                force.Normalize();
+                var rb1 = coll.gameObject.GetComponent<Rigidbody2D>();
+                rb1.AddForceAtPosition(-force * magnitude, transform.position);
+            }
         }
 
         Destroy(gameObject);
@@ -34,7 +40,7 @@ public class Projectile : MonoBehaviour {
         {
             turf.currentTile = coll.gameObject.GetComponent<SpriteRenderer>();
             turf.TileChanger();
-        }
+        }        
     }
 
     public void Launch(Vector2 direction)

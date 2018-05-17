@@ -121,6 +121,7 @@ MonoBehaviour:
   speed: 1000
   lifeTime: 20
   turf: {fileID: 0}
+  playerName: 
 --- !u!212 &212960501209469954
 SpriteRenderer:
   m_ObjectHideFlags: 1
