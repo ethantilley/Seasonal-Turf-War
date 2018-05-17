@@ -1391,6 +1391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 422419809}
   - component: {fileID: 422419808}
+  - component: {fileID: 422419810}
   m_Layer: 0
   m_Name: JoinManager
   m_TagString: Untagged
@@ -1436,6 +1437,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &422419810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 422419807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75982fdcaa2e624499af344e03522632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - Level 1
+  - Level 2
+  - Level 3
 --- !u!1 &433841634
 GameObject:
   m_ObjectHideFlags: 0
