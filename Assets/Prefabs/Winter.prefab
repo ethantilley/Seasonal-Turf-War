@@ -167,7 +167,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1700329393460234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.91, y: -6.08, z: 0}
+  m_LocalPosition: {x: 8.12, y: -4, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1.7482109}
   m_Children:
   - {fileID: 4046278866340734}
@@ -313,7 +313,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.3, y: 0}
@@ -437,15 +437,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedPlayer: 3
   playerSpeed: 20
-  offset: 2
+  offset: 1.5
   angle: 0
   imgCusor: {fileID: 114823522703879258}
   gun: {fileID: 4778826152723942}
   projectilePrefab: {fileID: 1625166564943578, guid: c028b85465c9e354dac3a55ef52454bc,
     type: 2}
-  shovePrefab: {fileID: 1146705812384098, guid: a0467efa588957945b9aa9ea4c98592a,
-    type: 2}
   fireRate: 0.5
+  shoveRate: 0.5
   anim: {fileID: 0}
 --- !u!114 &114823522703879258
 MonoBehaviour:

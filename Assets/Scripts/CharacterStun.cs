@@ -22,20 +22,19 @@ public class CharacterStun : MonoBehaviour
             par.velocity = new Vector2(0, 0);
         }
 
-        if (collision.CompareTag("Shove" ))
+        if (collision.CompareTag("Shove"))
         {
             if (isShoved == false)
-            {
-                
+            {                
                 float magnitude = 10000;
                 Vector3 force = transform.position - collision.transform.position;
-               // force.Normalize();
+                // force.Normalize();
 
                 GetComponent<Rigidbody2D>().AddForceAtPosition(force.normalized * magnitude, collision.transform.position);
                 isShoved = true;
                 StartCoroutine(DontShove());
             }
-        }
+        }       
 
         if(collision.CompareTag("DeadZone"))
         {
@@ -49,11 +48,7 @@ public class CharacterStun : MonoBehaviour
 
             if (GameManager.instance != null)
                 GameManager.instance.ReSpawnPlayer(gameObject);
-            
-    
-        }
-
-
+        }        
     }
    
     public IEnumerator DontShove()

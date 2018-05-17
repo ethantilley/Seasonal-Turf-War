@@ -288,7 +288,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.3, y: 0}
@@ -441,15 +441,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedPlayer: 1
   playerSpeed: 20
-  offset: 2
+  offset: 1.5
   angle: 0
   imgCusor: {fileID: 114380318156685242}
   gun: {fileID: 4442434612353044}
   projectilePrefab: {fileID: 1938103727456914, guid: 797685d1ae0ed0941993da2e6ac8bad0,
     type: 2}
-  shovePrefab: {fileID: 1146705812384098, guid: a0467efa588957945b9aa9ea4c98592a,
-    type: 2}
   fireRate: 0.5
+  shoveRate: 0.5
   anim: {fileID: 0}
 --- !u!114 &114761243912845278
 MonoBehaviour:
