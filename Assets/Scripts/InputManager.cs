@@ -22,8 +22,10 @@ public class InputManager : MonoBehaviour
 
     float rstickX;
     float rstickY;
-    private bool rTrigger;
-    private bool rBumper;
+    private bool rTrigger,
+        shoot;
+    private bool rBumper,
+        shove;
     private float cursorspeed = 5;
     Vector2 direction;
     float ConAngle;
@@ -33,7 +35,8 @@ public class InputManager : MonoBehaviour
     public Transform gun;
     public GameObject projectilePrefab,
         shovePrefab;
-    public float fireRate = 0.5f;
+    public float fireRate = 0.5f,
+        shoveRate = 0.5f;
     public Animator anim;
 
     // Use this for initialization
@@ -41,38 +44,7 @@ public class InputManager : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         m_Character = GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>();
-    }
-    private void OnEnable()
-    {
-        StartCoroutine(GunCoolDown());
-        StartCoroutine(ShoveCoolDown());
-    }
-   IEnumerator GunCoolDown ()
-    {
-        if(rTrigger)
-        {
-            
-            Debug.Log(this.gameObject.name + "GunCoolDown");
-            FireProjectile();
-            anim.SetTrigger("Throw");
-
-            yield return new WaitForSeconds(fireRate);
-        }
-        yield return new WaitForSeconds(.2f);
-        StartCoroutine(GunCoolDown());
-    } 
-    IEnumerator ShoveCoolDown()
-    {
-        if (rBumper)
-        {
-            rBumper = false;
-            anim.SetTrigger("Shove");
-           
-            yield return new WaitForSeconds(0.5f);
-        }
-        yield return new WaitForSeconds(.2f);
-        StartCoroutine(ShoveCoolDown());
-    }
+    }   
    
     private void Update()
     {
@@ -86,8 +58,48 @@ public class InputManager : MonoBehaviour
         {
             imgCusor.gameObject.SetActive(true);
         }
-      
-        // imgCusor.transform.rotation = Quaternion.(ConAngle, Vector3.forward);
+
+        if (shove == false)
+        {
+            shoveRate -= Time.deltaTime;
+            if (shoveRate <= 0)
+            {
+                shove = true;
+                shoveRate = 0.5f;
+            }
+        }
+
+        if (shoot == false)
+        {
+            fireRate -= Time.deltaTime;
+            if (fireRate <= 0)
+            {
+                shoot = true;
+                fireRate = 0.5f;
+            }
+        }
+
+        if (rBumper)
+        {
+            rBumper = false;
+            if (shove == true)
+            {
+                print("pressedandowrk");
+                shove = false;
+                anim.SetTrigger("Shove");
+            }
+        }
+
+        if (rTrigger)
+        {
+            rTrigger = false;
+            if (shoot == true)
+            {
+                print("pressedandowrk");
+                FireProjectile();
+            }
+        }
+
     }
 
     // Update is called once per frame
@@ -113,17 +125,6 @@ public class InputManager : MonoBehaviour
 
     void CheckControllerMovement()
     {
-
-
-
-
-
-
-
-
-
-
-
         if (GameManager.instance != null && GameManager.instance.gameComplete)
             return;
 
@@ -194,7 +195,8 @@ public class InputManager : MonoBehaviour
     void FireProjectile()
     {
         Debug.Log(this.gameObject.name + "fireproj");
-
+        shoot = false;
+        anim.SetTrigger("Throw");
         GameObject newProj = Instantiate(projectilePrefab, imgCusor.gameObject.transform.position, gun.rotation);
         Debug.Log(imgCusor.gameObject);
         Debug.Log(projectilePrefab);
