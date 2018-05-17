@@ -441,7 +441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedPlayer: 1
   playerSpeed: 20
-  offset: 1.5
+  offset: 1.2
   angle: 0
   imgCusor: {fileID: 114380318156685242}
   gun: {fileID: 4442434612353044}

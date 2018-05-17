@@ -50,4 +50,10 @@ public class Projectile : MonoBehaviour {
     
         rb.AddForce(-direction.normalized * speed);       
     }
+
+    public void Update()
+    {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.transform.right = rb.velocity;
+    }
 }
