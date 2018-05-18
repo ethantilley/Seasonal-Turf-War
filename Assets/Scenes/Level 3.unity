@@ -3107,18 +3107,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1001 &411067935
+--- !u!1001 &403313340
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 224400528891476742, guid: bacde6faca090eb42af4cff881c6e1bb,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 224400528891476742, guid: bacde6faca090eb42af4cff881c6e1bb,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -3207,10 +3202,6 @@ Prefab:
     - target: {fileID: 224400528891476742, guid: bacde6faca090eb42af4cff881c6e1bb,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1479026227161792, guid: bacde6faca090eb42af4cff881c6e1bb, type: 2}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
