@@ -19,13 +19,7 @@ public class JoinManager : MonoBehaviour {
             instance = this;
         }
     }
-
-
-
-
-
-
-
+    
     public GameObject autumn, spring, winter, summer;
     public bool con1B, con2B, con3B, con4B;
     public bool con1Start, con2Start, con3Start, con4Start;

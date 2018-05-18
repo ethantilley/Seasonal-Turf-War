@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
 {
 
     #region AudioClipData
-    [ System.Serializable]
+    [System.Serializable]
     public class AudioClipData
     {
         [ClipDrawer()]
@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
         public bool randomisedPitch = false;
         [Header("Pitch To Randomise Between"), Tooltip("Two Values For Pitch To Randomise Between")] //Todo: Maybe make that a property drawer of two floats, so there's no x and y that will likely confuse the designers
         public Vector2 randomPitchValues;
-               
+
     }
     #endregion
 
@@ -40,9 +40,19 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+
     public List<AudioClipData> clips = new List<AudioClipData>();
 
+    public AudioClip[] bgMusic;
+
     public AudioSource sfxSource;
+
+    public AudioSource bg;
+
+    public void Start()
+    {
+        StartCoroutine(PlayBGMusic(0));
+    }
 
     public void PlaySound(string clipName)
     {
@@ -58,10 +68,20 @@ public class AudioManager : MonoBehaviour
                     sfxSource.pitch = 1;
 
                 sfxSource.PlayOneShot(sound.audioClip);
-
-
-
             }
         }
+    }
+
+    public IEnumerator PlayBGMusic(int bgMusicNumber)
+    {
+        bgMusicNumber++;
+        if (bgMusicNumber >= 4)
+        {
+            bgMusicNumber = 0;
+        }
+        bg.clip = bgMusic[bgMusicNumber];
+        bg.Play();
+        yield return new WaitForSeconds(bgMusic[bgMusicNumber].length);
+        StartCoroutine(PlayBGMusic(bgMusicNumber));
     }
 }

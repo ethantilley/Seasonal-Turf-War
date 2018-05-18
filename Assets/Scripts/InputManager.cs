@@ -201,7 +201,7 @@ public class InputManager : MonoBehaviour
             AudioManager.instance.PlaySound(throwSound);
             anim.SetTrigger("Throw");
             GameObject newProj = Instantiate(projectilePrefab, imgCusor.gameObject.transform.position, gun.rotation);
-            CameraController.instance.StartShake(GetComponent<ScreenShake>().properties);
+            //CameraController.instance.StartShake(GetComponent<ScreenShake>().properties);
 
             var script = newProj.GetComponent<Projectile>();
             script.turf = gameObject.GetComponent<TurfSystem>();
