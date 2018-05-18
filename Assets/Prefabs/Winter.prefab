@@ -400,7 +400,7 @@ MonoBehaviour:
   deathParticlePrefab: {fileID: 1002807749246106, guid: 676d4ab18e874584c9c6b6a5162e1f67,
     type: 2}
   deathPart: {fileID: 0}
-  deathSound: None
+  deathSound: playerDeath
 --- !u!114 &114482653755530808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTile: {fileID: 0}
-  playersSeasonTile: {fileID: 21300000, guid: ccba151a3b39f254283d8d31798e8c25, type: 3}
+  playersSeasonTile: {fileID: 21300000, guid: 36a6c136a0cd19c4789de7ab94e4612c, type: 3}
   ownedTiles: []
 --- !u!114 &114786491928940590
 MonoBehaviour:
