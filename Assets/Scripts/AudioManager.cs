@@ -43,17 +43,9 @@ public class AudioManager : MonoBehaviour
 
     public List<AudioClipData> clips = new List<AudioClipData>();
 
-    public AudioClip[] bgMusic;
-
+   
     public AudioSource sfxSource;
-
-    public AudioSource bg;
-
-    public void Start()
-    {
-        StartCoroutine(PlayBGMusic(0));
-    }
-
+    
     public void PlaySound(string clipName)
     {
         foreach (AudioClipData sound in clips)
@@ -72,16 +64,4 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public IEnumerator PlayBGMusic(int bgMusicNumber)
-    {
-        bgMusicNumber++;
-        if (bgMusicNumber >= 4)
-        {
-            bgMusicNumber = 0;
-        }
-        bg.clip = bgMusic[bgMusicNumber];
-        bg.Play();
-        yield return new WaitForSeconds(bgMusic[bgMusicNumber].length);
-        StartCoroutine(PlayBGMusic(bgMusicNumber));
-    }
 }

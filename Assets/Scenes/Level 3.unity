@@ -9481,7 +9481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clips:
   - clipName: playerDeath
-    audioClip: {fileID: 8300000, guid: f31fccddb3a2d3043ae920662aa126b4, type: 3}
+    audioClip: {fileID: 8300000, guid: 72d418d63d77091468aae5c6d82ac3d6, type: 3}
     randomisedPitch: 0
     randomPitchValues: {x: 0, y: 0}
   - clipName: playerMelee

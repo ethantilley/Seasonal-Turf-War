@@ -60,7 +60,7 @@ public class CharacterStun : MonoBehaviour
                 deathPart = Instantiate(deathParticlePrefab, gameObject.transform.position, deathParticlePrefab.transform.rotation);
                 Destroy(deathPart, 2);
             }
-            AudioManager.instance.PlaySound(deathSound);
+           // AudioManager.instance.PlaySound(deathSound);
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
             if (GameManager.instance != null)
