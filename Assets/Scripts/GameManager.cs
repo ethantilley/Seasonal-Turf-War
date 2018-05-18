@@ -39,6 +39,11 @@ public class GameManager : MonoBehaviour {
 
     public string LevelTimer()
     {
+        if (currentTimeLeft <= 0)
+        {
+            return "0:00";
+        }
+
         string minutes = Mathf.Floor(currentTimeLeft / 60).ToString();
 
         string seconds = (currentTimeLeft % 60).ToString("00");
