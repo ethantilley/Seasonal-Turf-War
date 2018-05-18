@@ -142,7 +142,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1281830467213216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10.884733, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1.7482109}
   m_Children:
   - {fileID: 4885874678646924}
@@ -382,7 +382,7 @@ MonoBehaviour:
   deathParticlePrefab: {fileID: 1116529052636210, guid: 7a36f83390913ba4085bb0c0bb3c8003,
     type: 2}
   deathPart: {fileID: 0}
-  deathSound: playerDeath
+  deathSound: PlayerDeath
 --- !u!114 &114380318156685242
 MonoBehaviour:
   m_ObjectHideFlags: 1
