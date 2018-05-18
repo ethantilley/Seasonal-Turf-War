@@ -994,6 +994,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114848316799758812, guid: 727c6cfcadbc8784f89c17aaf465d39f,
+        type: 2}
+      propertyPath: deathSound
+      value: PlayerDeath
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 727c6cfcadbc8784f89c17aaf465d39f, type: 2}
   m_IsPrefabParent: 0
@@ -1092,6 +1097,11 @@ Prefab:
     - target: {fileID: 4302939523703014, guid: 793b8e00a9a98434681438f09ab04762, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114126133180029610, guid: 793b8e00a9a98434681438f09ab04762,
+        type: 2}
+      propertyPath: deathSound
+      value: PlayerDeath
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 793b8e00a9a98434681438f09ab04762, type: 2}
@@ -1894,7 +1904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - clipName: playerDeath
+  - clipName: PlayerDeath
     audioClip: {fileID: 8300000, guid: 72d418d63d77091468aae5c6d82ac3d6, type: 3}
     randomisedPitch: 0
     randomPitchValues: {x: 0, y: 0}
@@ -2864,6 +2874,11 @@ Prefab:
     - target: {fileID: 4904868907317222, guid: 1ed821d1d65650e47869ecde497a5593, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114447866517005902, guid: 1ed821d1d65650e47869ecde497a5593,
+        type: 2}
+      propertyPath: deathSound
+      value: PlayerDeath
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ed821d1d65650e47869ecde497a5593, type: 2}
@@ -5585,6 +5600,11 @@ Prefab:
     - target: {fileID: 4055280803555796, guid: a127f31887458d14b80635d08f1492a5, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421197014815126, guid: a127f31887458d14b80635d08f1492a5,
+        type: 2}
+      propertyPath: deathSound
+      value: PlayerDeath
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a127f31887458d14b80635d08f1492a5, type: 2}
