@@ -144,7 +144,7 @@ MonoBehaviour:
   maxY: {fileID: 0}
   targets: []
   minZoom: 10
-  maxZoom: 6
+  maxZoom: 7
   zoomLimiter: 30
 --- !u!114 &114358752806597432
 MonoBehaviour:

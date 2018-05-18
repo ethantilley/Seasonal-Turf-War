@@ -19,13 +19,7 @@ public class JoinManager : MonoBehaviour {
             instance = this;
         }
     }
-
-
-
-
-
-
-
+    
     public GameObject autumn, spring, winter, summer;
     public bool con1B, con2B, con3B, con4B;
     public bool con1Start, con2Start, con3Start, con4Start;
@@ -83,27 +77,32 @@ public class JoinManager : MonoBehaviour {
         if (con1B)
         {
             autumn.SetActive(true);
+            if(!playersJoining.Contains(autumn.name))
             playersJoining.Add(autumn.name);
         }
        
         if (con2B)
         {
             spring.SetActive(true);
-            playersJoining.Add(spring.name);
+            if (!playersJoining.Contains(spring.name))
+                playersJoining.Add(spring.name);
         }
        
         if (con3B)
         {
 
             summer.SetActive(true);
-            playersJoining.Add(summer.name);
+            if (!playersJoining.Contains(summer.name))
+                playersJoining.Add(summer.name);
 
         }
 
         if (con4B)
         {
             winter.SetActive(true);
-            playersJoining.Add(winter.name);  }
+            if (!playersJoining.Contains(winter.name))
+                playersJoining.Add(winter.name);
+        }
        
 
         if (con1Start)
@@ -140,6 +139,11 @@ public class JoinManager : MonoBehaviour {
 
             con1Start = true;
         }
-       
+
+        if (Input.GetButtonDown("Controller_Back"))
+        {
+            Application.Quit();
+        }
+
     }
 }
