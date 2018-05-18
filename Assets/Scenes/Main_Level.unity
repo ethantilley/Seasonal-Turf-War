@@ -1544,15 +1544,15 @@ RectTransform:
   m_GameObject: {fileID: 188892589}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.09999894, y: 0.09999894, z: 1.000002}
+  m_LocalScale: {x: 0.23476408, y: 0.23476417, z: 2.3476713}
   m_Children: []
   m_Father: {fileID: 1242392166}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 151.5, y: 59.69995}
-  m_SizeDelta: {x: 2000, y: 500}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -10, y: -20}
+  m_SizeDelta: {x: 814.9, y: 500}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &188892591
 MonoBehaviour:
@@ -1574,7 +1574,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 78863c88376fad74c9f347fd3bb54c4a, type: 3}
     m_FontSize: 300
     m_FontStyle: 0
     m_BestFit: 0
@@ -6987,16 +6987,16 @@ RectTransform:
   m_GameObject: {fileID: 951187846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.29734248, y: 0.2973428, z: 0.2973428}
   m_Children: []
   m_Father: {fileID: 1242392166}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 63.23, y: 0}
-  m_SizeDelta: {x: 2000, y: 500}
-  m_Pivot: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 2}
+  m_SizeDelta: {x: 995.9, y: 500}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &951187848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7017,7 +7017,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 78863c88376fad74c9f347fd3bb54c4a, type: 3}
     m_FontSize: 300
     m_FontStyle: 0
     m_BestFit: 0
@@ -8131,6 +8131,7 @@ MonoBehaviour:
   gameComplete: 0
   playerDownTime: 5
   levelTime: 120
+  gamePaused: 0
   winningPlayer: 
   currentTimeLeft: 0
   Autumn: {fileID: 0}
@@ -8139,6 +8140,10 @@ MonoBehaviour:
   Winter: {fileID: 0}
   deadPlayers: []
   players: []
+  currDownTime1: 0
+  currDownTime2: 0
+  currDownTime3: 0
+  currDownTime4: 0
 --- !u!114 &1083571642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8150,7 +8155,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d8a3ade1d2955d46a1f1dd0c84453f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  properties: {fileID: 11400000, guid: 1863366f7b0746345b90f096d6d09b47, type: 2}
+  properties:
+    angle: 0
+    strength: 0.5
+    speed: 5
+    duration: 1
+    noisePercent: 0
+    dampingPercent: 0
+    rotationPercent: 0
 --- !u!1 &1117058073
 GameObject:
   m_ObjectHideFlags: 0
@@ -9274,6 +9286,7 @@ GameObject:
   - component: {fileID: 1242392164}
   - component: {fileID: 1242392163}
   - component: {fileID: 1242392162}
+  - component: {fileID: 1242392167}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -9373,6 +9386,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1242392167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1242392161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c14cb66bd868a44a81d823ae4fbee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fonts:
+  - {fileID: 12800000, guid: 78863c88376fad74c9f347fd3bb54c4a, type: 3}
 --- !u!1 &1252703956
 GameObject:
   m_ObjectHideFlags: 0
@@ -17096,4 +17122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b932e251415aaa84d97723bf45b96b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  properties: {fileID: 11400000, guid: 1863366f7b0746345b90f096d6d09b47, type: 2}
+  properties:
+    angle: 0
+    strength: 0.5
+    speed: 5
+    duration: 1
+    noisePercent: 0
+    dampingPercent: 0
+    rotationPercent: 0
