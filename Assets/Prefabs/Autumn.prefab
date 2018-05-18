@@ -502,7 +502,7 @@ MonoBehaviour:
   deathParticlePrefab: {fileID: 1223289337943682, guid: 9f2b0126c1c6dda48b3a1a686b233dde,
     type: 2}
   deathPart: {fileID: 0}
-  deathSound: playerDeath
+  deathSound: PlayerDeath
 --- !u!114 &114907469202219278
 MonoBehaviour:
   m_ObjectHideFlags: 1
