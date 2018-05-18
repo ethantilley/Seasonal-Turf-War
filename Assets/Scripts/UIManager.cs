@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
-    public Text winnerText, winnerTextBG, timeLeftText;
+    public Text winnerText, winnerTextBG, timeLeftText, timeLeftTextBG;
     public GameObject gameCompletedPanel;
-    public Text gameCompletedPanelWinner;
+    public Text gameCompletedPanelWinner,
+        gameCompletedPanelWinnerBG;
     public Image blank;
     public Sprite autumn,
         winter,
@@ -19,9 +20,12 @@ public class UIManager : MonoBehaviour {
         {
             winnerText.gameObject.SetActive(false);
             timeLeftText.gameObject.SetActive(false);
+            winnerTextBG.gameObject.SetActive(false);
+            timeLeftTextBG.gameObject.SetActive(false);
 
             gameCompletedPanel.SetActive(true);
             gameCompletedPanelWinner.text = GameManager.instance.CalculateWinningPlayer();
+            gameCompletedPanelWinnerBG.text = gameCompletedPanelWinner.text;
             ChangeWinner();
             JoinManager.instance.startButtonActive = true;
             return;
@@ -30,6 +34,7 @@ public class UIManager : MonoBehaviour {
         winnerText.text = GameManager.instance.CalculateWinningPlayer();
         winnerTextBG.text = winnerText.text;
         timeLeftText.text = GameManager.instance.LevelTimer();
+        timeLeftTextBG.text = timeLeftText.text;
     }
 
     public void ChangeWinner()
