@@ -13355,6 +13355,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479026227161792, guid: bacde6faca090eb42af4cff881c6e1bb, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bacde6faca090eb42af4cff881c6e1bb, type: 2}
   m_IsPrefabParent: 0
@@ -34142,8 +34146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - clipName: playerDeath
-    audioClip: {fileID: 8300000, guid: f31fccddb3a2d3043ae920662aa126b4, type: 3}
+  - clipName: PlayerDeath
+    audioClip: {fileID: 8300000, guid: 72d418d63d77091468aae5c6d82ac3d6, type: 3}
     randomisedPitch: 0
     randomPitchValues: {x: 0, y: 0}
   - clipName: playerMelee
@@ -34154,7 +34158,9 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: f97f17f1649bc094bb34c414be900592, type: 3}
     randomisedPitch: 1
     randomPitchValues: {x: 0.8, y: 1.1}
+  bgMusic: []
   sfxSource: {fileID: 1992125955}
+  bg: {fileID: 0}
 --- !u!82 &1992125955
 AudioSource:
   m_ObjectHideFlags: 0
