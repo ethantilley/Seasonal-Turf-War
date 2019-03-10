@@ -17,6 +17,6 @@ In the game, there's a join game level that's more for you to get used to the co
 
 ## Acknowledgments
 
-* Hat tip to Steve Halliwell who fasilitated and ran the game jam. <3
+* Hat tip to Steve Halliwell who facilitated and ran the game jam. <3
 * Inspired by brawhallah and smash bros
 
